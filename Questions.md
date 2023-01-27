@@ -32,7 +32,7 @@
 - **@StateObject and @ObservedObject** look the same and both conform to **ObservableObject** protocol, but differ in how SwiftUI manages their lifecycle.
 - **@ObservedObject** destroyed and re-instantiated every time the containing view redraws but **@StateObject** doesn't.
 - A not completely unimportant implication of **@StateObject** is performance. If you're using an **@ObservedObject** that's recreated often that might harm your view's rendering performance. Since @StateObject is not recreated for every view re-render, it has a far smaller impact on your view's drawing cycle.
-- but there is an issue here as **MovieRow** is embedded inside a **NavigationLink**, and List really does not create new instances of row, but reuses created before. However **NavigationLink** creates new instance every time, so chaning from @StateObject to **@ObservableObject** won't affect in our case.
+- but there is an issue here as **MovieRow** is embedded inside a **NavigationLink**, and List really does not create new instances of row, but reuses created before. However **NavigationLink** creates new instance every time, so changing from @StateObject to **@ObservableObject** won't affect in our case.
 
 
 ### 8. In PopularMoviesListViewModel.swift we ask for popular movies, using the current implementation fetch top rated movies instead, and explain what is happening.
