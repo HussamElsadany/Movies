@@ -1,49 +1,28 @@
-[![Sytac](https://sytac.io/images/2017/11/logo.svg)](http://sytac.io)
 # Sytac iOS assignment | Movies
 
-The time has come for us to unveil the code challenge Sytac has prepared for you. The challenge involves working with the Movies application and includes the following tasks:
 
-### Questions
+In the assignment, I tried to show how architectural patterns **MVVM** and **Clean Architecture** can be applied.
 
-1. Provide a high-level review of the application. Give your opinion on both aspects you consider positive and aspects you consider negative. Describe how and why would you do things differently.
-2. The logic of ImageCache hides an issue. Try to discover and fix it.
-3. Replace the binding between Repository and View model without combine.
-4. Replace the Popular detail view with a new custom detail view. This view should display a detail with the info of the model movie model. Please use SwiftUI for the detailed view.
-5. Replace the TopRated tab with a new list view. This view should display a list of the TopRated movies and it must be implemented programmatically using UIKit.
-6. Write unit tests whereever you need them.
-7. In MoviewRow.swift line 11 we use @StateObject, could we change it with @ObservedObject? what are the differences?
-8. In PopularMoviesListViewModel.swift we ask for popular movies, using the current implementation fetch top rated movies instead, and explain what is happening.
-9. Implement load more functionality for Popular movies list screen.
+After grouping all layers, I splitted the app into 3 layers: **Presentation, Domain and Data layers.**
+
+The image show how is dependency between the layers.
+
+![Clean Architecture Graph](https://miro.medium.com/v2/resize:fit:720/format:webp/1*MzkbfQsYb0wTBFeqplRoKg.png)
+
+**Domain Layer (Business logic)** (without dependencies to other layers, it is totally isolated). It contains *Entities(Business Models), Use Cases, and Repository Interfaces.*
+
+**Presentation Layer** contains *UI (UIViewControllers or SwiftUI Views).* Views are coordinated by *ViewModels (Presenters) which execute one or many Use Cases.* Presentation Layer depends only on the Domain Layer.
+
+**Data Layer** contains *Repository Implementations and one or many Data Sources.*
 
 
-You have total freedom to modify the codebase, there are no constraints on the design/layout of the TopRated screen. The TopRated List and detail view should be created programmatically only (no Interface Builder nor SwiftUI).
-### Important: Once you are ready with the solution, please create a PR to `main`. We will receive a notification that your solution is ready for review, and assign one of our colleagues to it.
+### Data Flow
+1. **View(UI)** calls method from **ViewModel** (Presenter).
+2. **ViewModel** executes **Use Case**.
+3. **Use Case** combines data from *Repositories*.
+4. Each **Repository** returns data from a Remote Data (Network).
+5. Information flows back to the **View(UI)** where we display the list of items.
 
-##### **Notes: The Movies project works with Xcode 12 and up and the language used is Swift.**
 
-### Backend:
-To retrieve movies related data, the application is using this API
-https://www.themoviedb.org/documentation/api
-
-### Requisites:
-- The project has to compile without errors.
-- The code should be clean, efficient and understandable. Remember to
-structure your source code correctly (using a nice architecture would
-make this easier).
-- Keep in mind the performance of the application.
-- Use version control in the project to show your progress, commit like you
-would normally.
-- We would like to see at least the first 5 questions solved, the more you provide the better.
-
-If you have any technical issue or problem, please reach out to your recruiter and we will try to answer as soon as possible.
-
-Good luck!
-
-## Tips
-- We value quality over quantity.
-- Share any information you believe would help the reviewer understand better your solution.
-- Deliver production ready code.
-## License
-
-MIT
-**Free Software!**
+### Testing
+I covered **Domain and Data Layer** and most important parts in **Presentation layer** (ViewModel).
