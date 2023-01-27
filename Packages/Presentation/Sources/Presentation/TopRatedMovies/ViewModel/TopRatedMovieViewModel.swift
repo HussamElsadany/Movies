@@ -37,7 +37,7 @@ public class TopRatedMovieViewModel: ListViewModelProtocol {
 extension TopRatedMovieViewModel {
     func didLoadTopRatedMovies(_ movies: MovieList) {
         datasource = topRated(movies.results)
-        title = "\("movie_popular_title".localized) (\(datasource.count))"
+        title = "\("movie_toprated_title".localized) (\(datasource.count))"
     }
 
     func didFailToLoadTopRatedMovies(_ error: Error) {
