@@ -43,6 +43,7 @@
 		7AF4D20A2625B8F80064C6CC /* MovieList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AF4D2092625B8F80064C6CC /* MovieList.swift */; };
 		7AF4D20F2625B98E0064C6CC /* sample_movie_list_medium.json in Resources */ = {isa = PBXBuildFile; fileRef = 7AF4D20E2625B98E0064C6CC /* sample_movie_list_medium.json */; };
 		DCA6982E29835BA3001223B1 /* Domain in Frameworks */ = {isa = PBXBuildFile; productRef = DCA6982D29835BA3001223B1 /* Domain */; };
+		DCA6983029835CB7001223B1 /* Data in Frameworks */ = {isa = PBXBuildFile; productRef = DCA6982F29835CB7001223B1 /* Data */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -115,6 +116,7 @@
 			files = (
 				DCA6982E29835BA3001223B1 /* Domain in Frameworks */,
 				7A8FDD942627318300917A03 /* NetworkProvider in Frameworks */,
+				DCA6983029835CB7001223B1 /* Data in Frameworks */,
 				7A6D1B72262EE24600D3BACD /* ImageCache in Frameworks */,
 				7A9F44122625E4960047563D /* PlistReader in Frameworks */,
 				7A9F440A2625D3640047563D /* Common in Frameworks */,
@@ -325,6 +327,7 @@
 				7A8FDD932627318300917A03 /* NetworkProvider */,
 				7A6D1B71262EE24600D3BACD /* ImageCache */,
 				DCA6982D29835BA3001223B1 /* Domain */,
+				DCA6982F29835CB7001223B1 /* Data */,
 			);
 			productName = Movies;
 			productReference = 7AF4D187262490120064C6CC /* Movies.app */;
@@ -835,6 +838,10 @@
 		DCA6982D29835BA3001223B1 /* Domain */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = Domain;
+		};
+		DCA6982F29835CB7001223B1 /* Data */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = Data;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
