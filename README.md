@@ -26,7 +26,3 @@ The image show how is dependency between the layers.
 
 ### Testing
 I covered **Domain and Data Layer** and most important parts in **Presentation layer** (ViewModel).
-
-
-### Questions
-[Answers](https://github.com/Sytac-DevCase/iOS-HussamElsadany/blob/develop/Questions.md)
