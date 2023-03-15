@@ -1,4 +1,4 @@
-# Sytac iOS assignment | Movies
+# Movies
 
 
 In the assignment, I tried to show how architectural patterns **MVVM** and **Clean Architecture** can be applied.
